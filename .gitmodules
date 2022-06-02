@@ -1,0 +1,3 @@
+[submodule "powersmb/themes/hugo-scroll"]
+	path = powersmb/themes/hugo-scroll
+	url = https://github.com/janraasch/hugo-scroll.git
