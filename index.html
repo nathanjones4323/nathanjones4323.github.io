@@ -1063,19 +1063,6 @@
 
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  // ---- NAV ACTIVE STATE ----
-  const sections = document.querySelectorAll('section[id]');
-  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        navAnchors.forEach(a => a.classList.remove('nav-active'));
-        const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
-        if (active && !active.classList.contains('nav-cta')) active.classList.add('nav-active');
-      }
-    });
-  }, { threshold: 0.4 });
-  sections.forEach(s => navObserver.observe(s));
 
   // ---- NAV SHADOW ON SCROLL ----
   window.addEventListener('scroll', () => {
